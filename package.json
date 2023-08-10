@@ -1,0 +1,19 @@
+{
+  "name": "flight_booking_app",
+  "version": "1.0.0",
+  "description": "A backend application that will be integrated with a conversational bot to facilitate flight ticket bookings.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Temitopesam1/Flight_Booking_App.git"
+  },
+  "author": "Temitope Sam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Temitopesam1/Flight_Booking_App/issues"
+  },
+  "homepage": "https://github.com/Temitopesam1/Flight_Booking_App#readme"
+}

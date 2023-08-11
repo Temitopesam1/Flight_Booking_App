@@ -30,7 +30,7 @@ Clone this repository:
 
    ```bash
    git clone https://github.com/Temitopesam1/Flight_Booking_App.git
-   cd conversational-bot-flight-booking
+   cd Flight_Booking_App
    npm i
    ```
 
@@ -46,9 +46,9 @@ following routes before testing:
 | Method | Endpoint       | Description                                    |
 |--------|:--------------:|------------------------------------------------|
 | GET    | `/flights`     | Retrieve available flights based on user input |
-| GET    | `/flights/:id` | Retrieve a particular flight                   |
-| POST   | `/booking`     | Confirm a booking. Provide ID                  |
-| POST   | `/payment`     | Payment processing for booking confirmation    |
+| GET    | `/flights/:id` | Retrieve a particular flight. Eg: "http://localhost:3000/flights/2"                   |
+| POST   | `/booking`     | Confirms a booking and Provides booking details. Body: { "flight_id": 1, "passenger": "Temi Sam" }                |
+| POST   | `/payment`     | Payment processing for booking confirmation. Body: { "something": "random" }    |
 
 Run unit tests to ensure the reliability and functionality of the application:
 ```sh

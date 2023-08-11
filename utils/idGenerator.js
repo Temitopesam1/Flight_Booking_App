@@ -1,6 +1,7 @@
 const uuid = require('uuid');
 
-export function generateId() {
+function generateId() {
     // A function to generate a unique booking ID
     return uuid.v4();
 }
+module.exports = generateId;

@@ -1,4 +1,4 @@
-import { generateId } from "../utils/idGenerator";
+const generateId  = require("../utils/idGenerator");
 
 const bookings = [];
 
@@ -13,4 +13,4 @@ class BookingModel{
     }
 }
 const bookingModel = new BookingModel()
-export default bookingModel;
+module.exports = bookingModel;

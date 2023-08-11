@@ -1,4 +1,4 @@
-import flightsModel from '../models/flightsModel';
+const flightsModel = require('../models/flightsModel');
 
 class AvailableFlights{
 
@@ -6,11 +6,12 @@ class AvailableFlights{
 
         // Validate and process data
         try {
+            if (!req.query){
+                return res.status(200).json(flightsModel.getAllFlights());
+            }
+
             const { departure, destination, date } = req.query;
 
-            if (!departure || !destination || !date) {
-                throw new Error('Invalid input. Departure city, destination city, and date are required.');
-            }
             const availableFlights = flightsModel.getAvailableFlights(departure, destination, date);
 
             // Return a list of flight options in JSON format
@@ -21,21 +22,25 @@ class AvailableFlights{
         }
     }
 
-    getFlight(res, req){
+    getFlight(req, res){
 
         // Validate and process data
         try {
-            const availableFlight = flightsModel.getFlightById(req.params);
+            const availableFlight = flightsModel.getFlightById(req.params.id);
+            
+            if (!availableFlight) {
+                return res.status(404).json({ error: 'Flight not found' });
+            }
 
             // Return a flight option in JSON format
             return res.status(200).json(availableFlight);
 
         } catch (error) {
-            return res.status(400).json({ error: error.message });
+            return res.status(500).json({ error: error.message });
         }
 
     }
     
 }
 const availableFlights = new AvailableFlights()
-export default availableFlights;
+module.exports = availableFlights;

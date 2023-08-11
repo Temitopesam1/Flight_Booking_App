@@ -1,6 +1,6 @@
-import { Router } from 'express';
-const router = Router();
-import availableFlights from '../controllers/flightsController';
+const express = require('express');
+const router = express.Router();
+const availableFlights = require('../controllers/flightsController');
 
 /**
  * @swagger
@@ -38,7 +38,7 @@ import availableFlights from '../controllers/flightsController';
 
 router.get('/', availableFlights.getFlights);
 
-router.get('/:id', availableFlights.getFlight);
+router.get('/:id/', availableFlights.getFlight);
 
 
-export default router;
+module.exports = router;

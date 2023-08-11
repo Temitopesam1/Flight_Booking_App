@@ -4,7 +4,8 @@
   "description": "A backend application that will be integrated with a conversational bot to facilitate flight ticket bookings.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development nodemon app",
+    "test": "mocha tests/test_app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/Temitopesam1/Flight_Booking_App/issues"
   },
-  "homepage": "https://github.com/Temitopesam1/Flight_Booking_App#readme"
+  "homepage": "https://github.com/Temitopesam1/Flight_Booking_App#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.2.0"
+  }
 }

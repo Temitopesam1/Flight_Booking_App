@@ -9,7 +9,7 @@ class BookingModel{
         const bookingId = generateId();
         const bookingDetails = { ...bookingData, bookingId };
         bookings.push(bookingDetails);
-        return bookingId;
+        return bookings.find(booking => booking.bookingId === bookingId);
     }
 }
 const bookingModel = new BookingModel()

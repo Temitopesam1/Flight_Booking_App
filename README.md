@@ -48,7 +48,7 @@ following routes before testing:
 | GET    | `/flights`     | Retrieve available flights based on user input |
 | GET    | `/flights/:id` | Retrieve a particular flight. Eg: "http://localhost:3000/flights/2"                   |
 | POST   | `/booking`     | Confirms a booking and Provides booking details. Body: { "flight_id": 1, "passenger": "Temi Sam" }                |
-| POST   | `/payment`     | Payment processing for booking confirmation. Body: { "something": "random" }    |
+
 
 Run unit tests to ensure the reliability and functionality of the application:
 ```sh

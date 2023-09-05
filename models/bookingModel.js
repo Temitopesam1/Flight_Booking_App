@@ -7,7 +7,7 @@ class BookingModel{
     storeBooking(bookingData) {
         // Store booking data
         const bookingId = generateId();
-        const bookingDetails = { ...bookingData, bookingId };
+        const bookingDetails = { bookingId, ...bookingData };
         bookings.push(bookingDetails);
         return bookings.find(booking => booking.bookingId === bookingId);
     }

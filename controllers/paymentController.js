@@ -1,17 +1,17 @@
 const generateId  = require("../utils/idGenerator");
 
 
-processPayment = (req, res) => {
+processPayment = () => {
     try{
-        const data = req.body;
         // Other logic to process payment here
 
 
         // Mock payment system logic to return a success message in JSON format if successful
         const paymentId = generateId();
-        return res.status(200).json({ message: 'Payment successful.', paymentId });
+        const payment = { paymentId, "Amount": "$100" }
+        return payment;
     } catch(error){
-        return res.status(500).json({ error: error.message });
+        throw new Error("Unable to process payment!")
     }
 };
 module.exports = processPayment ;

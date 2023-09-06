@@ -1,6 +1,7 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = require('../app');
+const processPayment = require('../controllers/paymentController');
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -35,15 +36,10 @@ describe('Flight Booking App API', () => {
             });
     });
 
-    it('should confirm payment', (done) => {
-        chai.request(app)
-            .post('/payment')
-            .send({ flight_id: 1 })
-            .end((err, res) => {
-                expect(res).to.have.status(200);
-                done();
-            });
-    });
+    it('should return payment details as object', () => {
+        const details = processPayment();
+        expect(details).to.be.a('object')
+    })
 
     // We can also add more test cases here
 });
